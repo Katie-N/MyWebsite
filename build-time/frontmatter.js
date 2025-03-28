@@ -1,4 +1,4 @@
-fs = require('fs');
+const fs = require('fs');
 const matter = require('gray-matter');
 
 // Read markdown files and extract frontmatter

@@ -44,7 +44,7 @@ Check out the live sample on [Netlify](https://static-blog-template.netlify.app/
 
 ## Developers
 
-`npm install` to install the dependencies.
+`npm install --legacy-peer-deps` to install the dependencies. I had to add the flag to get it to work on newer node versions.
 
 `npm run dev` to start a development server (with Vite).
 

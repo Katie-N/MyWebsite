@@ -1,27 +1,27 @@
-import { VitePWA } from 'vite-plugin-pwa';
-import path from 'path';
-import vue from '@vitejs/plugin-vue';
-import components from 'unplugin-vue-components/vite'
-import { HeadlessUiResolver } from 'unplugin-vue-components/resolvers'
-import icons from 'unplugin-icons/vite';
-import ViteIconsResolver from 'unplugin-icons/resolver';
-import pages from 'vite-plugin-pages';
-import layouts from 'vite-plugin-vue-layouts';
-import markdown from 'vite-plugin-md';
-import shiki from 'shiki';
-import anchorPlugin from 'markdown-it-anchor';
-import taskListsPlugin from 'markdown-it-task-lists';
-import { slugify } from './build-time/markdown/slugify';
-import { modifyHeading } from './build-time/markdown/heading';
-import { linkPlugin } from './build-time/markdown/link';
-import { highlightLinePlugin } from './build-time/markdown/highlightLines';
-import { lineNumberPlugin } from './build-time/markdown/lineNumbers';
-import { containerPlugin } from './build-time/markdown/containers';
-import { preWrapperPlugin } from './build-time/markdown/preWrapper';
-import metaResolver from './build-time/frontmatter';
-import AutoImport from 'unplugin-auto-import/vite'
+const { VitePWA } = require( 'vite-plugin-pwa')
+const path = require( 'path')
+const vue = require( '@vitejs/plugin-vue')
+const components = require('unplugin-vue-components/vite')
+const { HeadlessUiResolver } = require('unplugin-vue-components/resolvers')
+const icons = require('unplugin-icons/vite')
+const ViteIconsResolver = require('unplugin-icons/resolver')
+const pages = require('vite-plugin-pages').default
+const layouts = require('vite-plugin-vue-layouts').default
+const markdown = require('vite-plugin-md').default
+const shiki = require('shiki')
+const anchorPlugin = require('markdown-it-anchor')
+const taskListsPlugin = require('markdown-it-task-lists')
+const { slugify } = require('./build-time/markdown/slugify')
+const { modifyHeading } = require('./build-time/markdown/heading')
+const { linkPlugin } = require('./build-time/markdown/link')
+const { highlightLinePlugin } = require('./build-time/markdown/highlightLines')
+const { lineNumberPlugin } = require('./build-time/markdown/lineNumbers')
+const { containerPlugin } = require('./build-time/markdown/containers')
+const { preWrapperPlugin } = require('./build-time/markdown/preWrapper')
+const metaResolver = require('./build-time/frontmatter').default
+const AutoImport = require('unplugin-auto-import/vite')
 
-export default async ({ command, mode }) => {
+module.exports = async ({ command, mode }) => {
 	const shikiHighlighter = await shiki.getHighlighter({
 		// Choose which syntax highlighting themes you want
 		// These are used below in the markdown highlight option
