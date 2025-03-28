@@ -1,0 +1,240 @@
+:root {
+	--code-line-height: 1.5rem;
+	--code-font-size: 15px;
+	--code-padding: 2rem;
+	--code-ln-padding: 1.5rem;
+}
+
+.prose > div[class*='language-'] {
+	max-width: var(--column-with-gap) !important;
+}
+
+li > div[class*='language-'] {
+	@apply rounded;
+	margin: 1rem -1.5rem 1rem -1.25rem;
+}
+
+@media (min-width: 420px) {
+	div[class*='language-'] {
+		@apply rounded;
+	}
+	li > div[class*='language-'] {
+		margin: 1rem 0 1rem 0;
+		@apply rounded;
+	}
+}
+
+div[class*='language-'] {
+	position: relative;
+	margin-top: 1.5em;
+	margin-bottom: 2.5em;
+	overflow-x: auto;
+	@apply shadow-xl bg-code dark:bg-code-dark border border-gray-200 dark:border-code-dark;
+}
+
+[class*='language-'] code,
+[class*='language-'] pre {
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	line-height: var(--code-line-height) !important;
+	font-size: var(--code-font-size) !important;
+	@apply text-gray-700 dark:text-gray-100 !important;
+}
+
+.shiki-light {
+	display: block;
+	@apply bg-code !important;
+}
+
+.dark .shiki-light {
+	display: none;
+}
+
+.shiki-dark {
+	display: none;
+	@apply bg-code-dark !important;
+}
+
+.dark .shiki-dark {
+	display: block;
+}
+
+[class*='language-'] pre {
+	position: relative;
+	z-index: 1;
+	margin: 0 !important;
+	padding: var(--code-padding) !important;
+	mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+[class*='language-'] pre::-webkit-scrollbar {
+	display: none;
+}
+
+[class*='language-'] code {
+	padding: 0 !important;
+}
+
+.highlight-lines {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	padding: var(--code-padding) 0 !important;
+	width: 100%;
+	line-height: var(--code-line-height) !important;
+	font-family: theme('fontFamily.mono');
+	font-size: var(--code-font-size) !important;
+	user-select: none;
+	overflow: hidden;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.highlight-lines .highlighted {
+	background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+.dark .highlight-lines .highlighted {
+	background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+div[class*='language-'].line-numbers-mode {
+	padding-left: calc(var(--code-padding) + var(--code-ln-padding));
+}
+
+.line-numbers-wrapper {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 3;
+	border-right: 1px solid hsla(0, 0%, 0%, 0.25);
+	padding: var(--code-padding) 0;
+	width: calc(var(--code-padding) + var(--code-ln-padding));
+	text-align: center;
+	line-height: var(--code-line-height);
+	font-family: theme('fontFamily.mono');
+	font-size: var(--code-font-size);
+	@apply text-gray-400 dark:text-gray-400;
+}
+
+[class*='language-']:before {
+	position: absolute;
+	top: 0.6em;
+	right: 1em;
+	z-index: 2;
+	font-size: 0.8rem;
+	@apply text-gray-400 dark:text-gray-400;
+}
+
+[class*='language-'] [class*='language-']:before {
+	content: '' !important;
+}
+
+[class~='language-html']:before,
+[class~='language-markup']:before {
+	content: 'html';
+}
+
+[class~='language-markdown']:before,
+[class~='language-md']:before {
+	content: 'md';
+}
+
+[class~='language-css']:before {
+	content: 'css';
+}
+
+[class~='language-sass']:before {
+	content: 'sass';
+}
+
+[class~='language-scss']:before {
+	content: 'scss';
+}
+
+[class~='language-less']:before {
+	content: 'less';
+}
+
+[class~='language-stylus']:before {
+	content: 'styl';
+}
+
+[class~='language-javascript']:before,
+[class~='language-js']:before {
+	content: 'js';
+}
+
+[class~='language-vue']:before {
+	content: 'vue';
+}
+
+[class~='language-ts']:before,
+[class~='language-typescript']:before {
+	content: 'ts';
+}
+
+[class~='language-json']:before {
+	content: 'json';
+}
+
+[class~='language-rb']:before,
+[class~='language-ruby']:before {
+	content: 'rb';
+}
+
+[class~='language-py']:before,
+[class~='language-python']:before {
+	content: 'py';
+}
+
+[class~='language-xml']:before {
+	content: 'xml';
+}
+
+[class~='language-bash']:before,
+[class~='language-sh']:before {
+	content: 'sh';
+}
+
+[class~='language-php']:before {
+	content: 'php';
+}
+
+[class~='language-go']:before {
+	content: 'go';
+}
+
+[class~='language-rust']:before {
+	content: 'rust';
+}
+
+[class~='language-java']:before {
+	content: 'java';
+}
+
+[class~='language-c']:before {
+	content: 'c';
+}
+
+[class~='language-yaml']:before {
+	content: 'yaml';
+}
+
+[class~='language-dockerfile']:before {
+	content: 'dockerfile';
+}
