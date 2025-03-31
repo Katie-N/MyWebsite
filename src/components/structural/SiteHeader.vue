@@ -90,7 +90,7 @@
 			<i-heroicons-outline:sun v-if="isDark" class="w-7 h-7" />
 			<i-heroicons-outline:moon v-else class="w-7 h-7" />
 		</button>
-		<!-- Github -->
+		<!-- Github
 		<div class="bg-gray-400 w-full h-[1px] mr-6"></div>
 		<a
 			aria-label="View source"
@@ -111,7 +111,7 @@
 			"
 		>
 			<i-mdi:github class="w-7 h-7" />
-		</a>
+		</a> -->
 	</div>
 	<div class="h-[8rem]"></div>
 </template>

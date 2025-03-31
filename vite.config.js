@@ -68,8 +68,8 @@ module.exports = async ({ command, mode }) => {
 				registerType: 'autoUpdate', // default is 'promp'
 				includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
 				manifest: {
-					name: 'Blog',
-					short_name: 'Blog',
+					name: 'Katie Nordberg',
+					short_name: 'Katie Nordberg',
 					theme_color: '#ffffff',
 					icons: [
 						{
